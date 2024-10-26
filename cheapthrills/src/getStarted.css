@@ -1,0 +1,160 @@
+.get-started-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff1ca4, #9b1919);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .animated-background {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+  
+  .floating-circle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: float 8s infinite;
+    width: var(--size);
+    height: var(--size);
+    left: var(--position);
+    animation-delay: var(--delay);
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(-20px) translateX(-10px);
+    }
+    50% {
+      transform: translateY(20px) translateX(10px);
+    }
+  }
+  
+  .cards-container {
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+    z-index: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 800ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .card-personal {
+    transition-delay: 200ms;
+  }
+  
+  .card-team {
+    transition-delay: 400ms;
+  }
+  
+  .card-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .card-icon {
+    background: linear-gradient(135deg, #f7ee3a, #6B8DFF);
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .icon-sparkle, .icon-rocket {
+    color: white;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #FF61D8, #6B8DFF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .card-price {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .card-price span {
+    font-size: 1rem;
+    opacity: 0.7;
+  }
+  
+  .card-description {
+    color: #666;
+    margin-bottom: 1.5rem;
+  }
+  
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .feature-list li {
+    margin-bottom: 0.5rem;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .feature-list li::before {
+    content: "✓";
+    color: #6B8DFF;
+    font-weight: bold;
+  }
+  
+  .select-button {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #FF61D8, #6B8DFF);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .select-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgb(239, 243, 152);
+  }
+  
+  @media (max-width: 768px) {
+    .cards-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .card {
+      max-width: 100%;
+    }
+  }

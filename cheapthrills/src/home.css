@@ -1,0 +1,130 @@
+.homepage {
+    min-height: 100vh;
+    background-color: black;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    background-image: url('./bgimg.jpg');
+  }
+  
+  .background-gradient {
+    position: absolute;
+    inset: 0;
+    opacity: 0.2;
+    filter: blur(24px);
+    transition: all 1000ms;
+  }
+  
+  .gradient-purple-pink {
+    background: linear-gradient(to right, #a855f7, #ec4899);
+  }
+  
+  .gradient-blue-teal {
+    background: linear-gradient(to right, #3b82f6, #14b8a6);
+  }
+  
+  .gradient-indigo-purple {
+    background: linear-gradient(to right, #6366f1, #a855f7);
+  }
+  
+  .gradient-green-blue {
+    background: linear-gradient(to right, #22c55e, #3b82f6);
+  }
+  
+  .noise-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIzMDAiIGZpbHRlcj0idXJsKCNhKSIgb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==');
+    opacity: 0.5;
+  }
+  
+  .content-container {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1rem;
+  }
+  
+  .card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: scale(1) translateY(0);
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+  
+  /* Animation classes */
+  .card-visible {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  
+  .card-hovered {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .title {
+    font-size: 2.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, white, #d1d5db);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 200ms;
+  }
+  
+  .description {
+    font-size: 1.125rem;
+    color: black;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 400ms;
+  }
+  
+  .cta-button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 300ms;
+    background-color: rgb(250, 212, 43);
+    color: white;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 600ms;
+  }
+  
+  .cta-button:hover:not(.cta-button-hovered) {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .cta-button-hovered {
+    background-color: white;
+    color: black;
+  }
+  /* Apply animations when card is visible */
+  .card-visible .title,
+  .card-visible .description,
+  .card-visible .cta-button {
+    opacity: 1;
+    transform: translateY(0);
+  }
