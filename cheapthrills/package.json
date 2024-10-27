@@ -2,7 +2,7 @@
   "name": "cheapthrills",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://somya121.github.io/cheapthrills",
+  "homepage": "https://github.com/somya121/cheapthrills",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
